@@ -150,9 +150,6 @@ var App = Eventful.createClass({
   },
 
   updateBudget: function(budget) {
-      
-      console.log("event hit updateBudget" + budget);
-
     $.post(url.updateBudget, budget)
     .done(function(data) {
       this.setState({budget: data});
