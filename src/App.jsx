@@ -152,8 +152,10 @@ var App = Eventful.createClass({
   updateBudget: function(budget) {
     $.post(url.updateBudget, budget)
     .done(function(data) {
+      var oldBudget = parseFloat(this.state.budget);
+      var oldRemaining = parseFloat(this.state.remainingBudget,10);
       this.setState({budget: data});
-      this.setState({remainingBudget: (parseInt(this.state.remainingBudget,10)+ parseInt(data,10)) });
+      this.setState({remainingBudget: parseFloat(data) - (oldBudget - oldRemaining)  });
       console.log("hi -- just updated the budget" + data);
     }.bind(this))
     .fail(function(xhr, status, err) {
