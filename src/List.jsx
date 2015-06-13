@@ -95,8 +95,8 @@ var List = Eventful.createClass({
                     </form>
                 </div>
                 <div className="budgetDisplay">
-                  <h2 className="setBudget">Budget: ${this.props.budget}</h2>
-                  <h2 className="remainingBudget">Balance: ${this.props.remainingBudget}</h2>
+                  <div className="setBudget">Budget: ${this.props.budget}</div>
+                  <div className="remainingBudget">Balance: ${this.props.remainingBudget}</div>
                 </div>
                 <ul>
                   {this.state.autocomplete_items.map(this.renderAutocompleteItem)}
